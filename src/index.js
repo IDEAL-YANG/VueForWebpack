@@ -1,19 +1,15 @@
 import _ from 'lodash';
-import './style.css';
-import Icon from './icon.png';
-import Data from './data.xml';
+import printMe from './print.js';
 
 function component() {
     var element = document.createElement('div');
+    var button = document.createElement('button');
 
     element.innerHTML = _.join(['hello','webpack'],' ');
-    element.classList.add('hello');
 
-    var myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
-
-    console.log(Data);
+    button.innerHTML = 'Click me and check the console!';
+    button.onclick = printMe;
+    element.appendChild(button);
 
     return element
 }
